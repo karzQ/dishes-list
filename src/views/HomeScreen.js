@@ -32,12 +32,23 @@ const HomeScreen = ({ navigation }) => {
                     underlayColor="#CCCCCC"
                     onPress={() => handlePress(dish)}>
 
-                    <View style={{position: 'relative', alignItems: 'start', flexDirection: 'row', height: '100%'}}>
+                    <View style={{position: 'relative', alignItems: 'flex-start', flexDirection: 'row', height: '100%'}}>
                         <View style={{height: '100%', width: 'auto', backgroundColor: "lightgrey"}} />
                         
                         <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
                             <Text >{dish.name}</Text>
-                            <Text style={{color:'darkgray'}}>{dish.details}</Text>
+                            {
+                                dish.details !== '' && (
+                                    <Text style={{color:'darkgray'}}>{dish.details}</Text>
+                                )
+                            }
+
+                            {
+                                dish.details === '' && (
+                                    <Text style={{color:'darkgray'}}> - </Text>
+                                )
+                            }
+                            
                         </View>
                     </View>
                 </TouchableHighlight>

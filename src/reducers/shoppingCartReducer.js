@@ -10,32 +10,32 @@ const shoppingCartReducer = (state = initialState, action) => {
     switch(type) {
         case ADD_DISH_TO_CART: {
 
-            console.log("cart before : ", state.cart);
-            console.log({payload});
-
             const objIsFound = state.cart.find(item => item.name === payload.name);
-            console.log({objIsFound});
 
             if (objIsFound === undefined) {
                 const obj = { id: idGenerator(), quantity: 1, ...payload };
-                console.log({obj});
-
                 return {...state, cart: [ {...obj} , ...state.cart] };
+
+
 
             } else if (objIsFound !== undefined) {
 
                 const dish = state.cart.find(item => item.name === payload.name);
                 const obj = { id: payload.id, quantity: dish.quantity + 1, ...payload };
 
-                const dishIndex = state.cart.indexOf(dish);
-                // state.cart[dishIndex].quantity += 1;
+                console.log(payload)
+
+                //  const ingredients = [...dish.ingredients];
+
+                // Regarder Reduce
+                obj.ingredients.map((ingredient, index) => {
+                    console.log({index});
+                    ingredient.quantity += dish.ingredients[index].quantity;
+                });
+
+                // obj.ingredients = ingredients;
+
                 const newArr = state.cart.filter(item => item.id !== obj.id);
-
-                console.log({dish});
-                console.log({dishIndex});
-
-                console.log("cart after : ", state.cart);
-                // return {... state};
                 return {...state, cart: [ {...obj} , ...newArr] };
             }
         }

@@ -38,11 +38,6 @@ export const styles = StyleSheet.create({
     button: {
       padding: 15,
       backgroundColor: DEFAULT_COLOR,
-      width: 'fit-content',
-
-      text: {
-        color: TEXT_COLOR,
-        fontWeight: '500',
-      }
+      width: 'fit-content'
     }
 })

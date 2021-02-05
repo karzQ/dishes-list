@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import { SafeAreaView, View, FlatList, Text } from 'react-native';
+import { SafeAreaView, View, FlatList, Text, Pressable } from 'react-native';
 
 import FlatListTitle from '../components/FlatListTitle';
 import Loading from '../components/Loading';
 
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector } from 'react-redux';
 
-import * as md5 from 'md5';
+import { idGenerator } from '../utils/commons';
 import * as theme from '../config/theme';
+
+import FlatListIngredientItem from '../components/FlatListIngredientItem';
 
 const ShoppingList = () => {
     const {cart} = useSelector(store => store.shoppingCartStore);
@@ -19,8 +21,6 @@ const ShoppingList = () => {
         const ingredients = await getDishesIngredients(cart);
         await setCartIngredients([...ingredients]);
         await setIsLoading(false);
-        console.log({cart});
-        console.log({ingredients});
     }
 
     const getDishesIngredients = (arr) => {
@@ -49,25 +49,9 @@ const ShoppingList = () => {
         return (
             <View style={{width: '100%', flex:1, height: 50, flexDirection: "row", justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10 }}>
                 <View style={{flexDirection: "row", justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Text style={{fontWeight: 700}}>{dish.name}</Text>
+                    <Text>{dish.name}</Text>
                 </View>
                 <Text>x{dish.quantity}</Text>
-            </View>
-        )
-    }
-
-    const FlatListIngredientItem = ({ingredient}) => {
-        return (
-            <View style={{width: '100%', flex:1, height: 50, flexDirection: "row", justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 10 }}>
-                <View style={{flexDirection: "row", justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Text style={{fontWeight: 700}}>{ingredient.name}</Text>
-                    {
-                        ingredient.details !== '' && (
-                            <Text style={{color:'lightgray'}}> - {ingredient.details}</Text>
-                        )
-                    }
-                    </View>
-                <Text>{ingredient.quantity}{ingredient.unit}</Text>
             </View>
         )
     }
@@ -93,7 +77,7 @@ const ShoppingList = () => {
             <View style={theme.styles.listDisplayArea}>
                 <FlatList
                     data={cart}
-                    keyExtractor={item => md5(`dish-${item.id}-${item.name}`)}
+                    keyExtractor={item => `dish-${item.id + idGenerator()}-${item.name}`}
                     renderItem={({item}) => <FlatListPlannedDishItem dish={item} />}
                     ListHeaderComponent={<FlatListTitle title="Plats prévus" />}/>
             </View>
@@ -104,7 +88,7 @@ const ShoppingList = () => {
                     <View style={theme.styles.listDisplayArea}>
                         <FlatList 
                             data={cartIngredients}
-                            keyExtractor={item => md5(`ingredient-${item.id}-${item.name}`)}
+                            keyExtractor={item => `ingredient-${item.id + idGenerator()}-${item.name}`}
                             renderItem={({item}) => <FlatListIngredientItem ingredient={item} />}
                             ListHeaderComponent={<FlatListTitle title="Ingrédients nécessaires" />}/>
                     </View>
@@ -122,6 +106,10 @@ const ShoppingList = () => {
                     <Loading />
                 )
             }
+
+            <Pressable style={{backgrounColor: theme.DEFAULT_COLOR, postion: "absolute", bottom: 10, right: 10, padding: 20, borderRadius: "50%"}}>
+                <Text style={{color: 'white', fontSize: 24}}>+</Text>
+            </Pressable>
             
         </SafeAreaView>
     )
