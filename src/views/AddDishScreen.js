@@ -1,9 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 const AddDishScreen = () => {
     return (
-        <View></View>
+        <SafeAreaView></SafeAreaView>
     )
 }
 

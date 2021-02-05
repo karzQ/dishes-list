@@ -1,54 +1,54 @@
 export const dishes = [
     { "id": 0, "name": "Poulet au lait de coco", "imagePath": "#", "category": "plat", "ingredients": [
-        { "id": 0, "name": "Poulet", "category": "viande", "imagePath": "#", "details": "en escalope", "quantity": "300", "unit": "gramme"},
-        { "id": 1, "name": "Lait de coco", "category": "condiment", "imagePath": "#", "details": "brique", "quantity": "1", "unit": "piece" },
-        { "id": 2, "name": "Poivron", "category": "legumes", "imagePath": "#", "details": "Un Rouge, et un jaune", "quantity": "1", "unit": "piece" },
-        { "id": 3, "name": "Riz", "category": "féculent", "imagePath": "#", "details": "par personne", "quantity": "100", "unit": "gramme" },
-        { "id": 4, "name": "Crème fraîche", "category": "laitage", "imagePath": "#", "details": "Légère idéalement", "quantity": "100", "unit": "mL" },
-        { "id": 5, "name": "Tomate", "category": "fruit", "imagePath": "#", "details": "", "quantity": "1", "unit": "piece" }
+        { "id": 0, "name": "Poulet", "category": "viande", "imagePath": "#", "details": "en escalope", "quantity": 300, "unit": "g"},
+        { "id": 1, "name": "Lait de coco", "category": "condiment", "imagePath": "#", "details": "brique", "quantity": 1, "unit": "piece" },
+        { "id": 2, "name": "Poivron", "category": "legumes", "imagePath": "#", "details": "Un Rouge, et un jaune", "quantity": 1, "unit": "piece" },
+        { "id": 3, "name": "Riz", "category": "féculent", "imagePath": "#", "details": "Par personne", "quantity": 100, "unit": "g" },
+        { "id": 4, "name": "Crème fraîche", "category": "laitage", "imagePath": "#", "details": "Légère idéalement", "quantity": 100, "unit": "mL" },
+        { "id": 5, "name": "Tomate", "category": "fruit", "imagePath": "#", "details": "", "quantity": 1, "unit": "piece" }
     ]},
-    { "id": 1, "name": "Steak haché frites", "imagePath": "#", "category": "plat", "details": "par personne", "ingredients": [
-        { "id": 0, "name": "Steak haché", "category": "viande", "imagePath": "#", "details": "", "quantity": "100", "unit": "gramme"},
-        { "id": 1, "name": "Ketchup", "category": "condiment", "imagePath": "#", "details": "", "quantity": "10", "unit": "ml" },
-        { "id": 2, "name": "Pomme de terre", "category": "féculent", "imagePath": "#", "details": "spéciales frites", "quantity": "200", "unit": "gramme" }
+    { "id": 1, "name": "Steak haché frites", "imagePath": "#", "category": "plat", "details": "Par personne", "ingredients": [
+        { "id": 0, "name": "Steak haché", "category": "viande", "imagePath": "#", "details": "", "quantity": 100, "unit": "g"},
+        { "id": 1, "name": "Ketchup", "category": "condiment", "imagePath": "#", "details": "", "quantity": 10, "unit": "ml" },
+        { "id": 2, "name": "Pomme de terre", "category": "féculent", "imagePath": "#", "details": "spéciales frites", "quantity": 200, "unit": "g" }
     ]},
-    { "id": 2, "name": "Croque monsieur", "imagePath": "#", "category": "plat", "details": "par personne", "ingredients": [
-        { "id": 0, "name": "Pain de mie", "category": "pain", "imagePath": "#", "details": "tranches", "quantity": "4", "unit": "piece"},
-        { "id": 1, "name": "Fromage", "category": "fromage", "imagePath": "#", "details": "À croque monsieur, gouda, .. etc", "quantity": "4", "unit": "ml" },
-        { "id": 2, "name": "Margarine", "category": "corps gras", "imagePath": "#", "details": "", "quantity": "10", "unit": "gramme" }
+    { "id": 2, "name": "Croque monsieur", "imagePath": "#", "category": "plat", "details": "Par personne", "ingredients": [
+        { "id": 0, "name": "Pain de mie", "category": "pain", "imagePath": "#", "details": "tranches", "quantity": 4, "unit": "piece"},
+        { "id": 1, "name": "Fromage", "category": "fromage", "imagePath": "#", "details": "À croque monsieur, gouda, .. etc", "quantity": 4, "unit": "ml" },
+        { "id": 2, "name": "Margarine", "category": "corps gras", "imagePath": "#", "details": "", "quantity": 10, "unit": "g" }
     ]},
-    { "id": 3, "name": "Pâtes au thon", "imagePath": "#", "category": "plat", "details": "par personne", "ingredients": [
-        { "id": 0, "name": "Pâtes", "category": "féculent", "imagePath": "#", "details": "fusili", "quantity": "100", "unit": "gramme"},
-        { "id": 1, "name": "Crème fraîche", "category": "laitage", "imagePath": "#", "details": "Légère", "quantity": "50", "unit": "ml" },
-        { "id": 2, "name": "Thon", "category": "poisson", "imagePath": "#", "details": "", "quantity": "50", "unit": "gramme" },
-        { "id": 3, "name": "Aneth", "category": "condiment", "imagePath": "#", "details": "pincée", "quantity": "3", "unit": "piece" }
+    { "id": 3, "name": "Pâtes au thon", "imagePath": "#", "category": "plat", "details": "Par personne", "ingredients": [
+        { "id": 0, "name": "Pâtes", "category": "féculent", "imagePath": "#", "details": "fusili", "quantity": 100, "unit": "g"},
+        { "id": 1, "name": "Crème fraîche", "category": "laitage", "imagePath": "#", "details": "Légère", "quantity": 50, "unit": "ml" },
+        { "id": 2, "name": "Thon", "category": "poisson", "imagePath": "#", "details": "", "quantity": 50, "unit": "g" },
+        { "id": 3, "name": "Aneth", "category": "condiment", "imagePath": "#", "details": "pincée", "quantity": 3, "unit": "piece" }
     ]},
     { "id": 4, "name": "Île flottante", "imagePath": "#", "category": "dessert", "ingredients": [
-        { "id": 0, "name": "Crème anglaise", "category": "sauce", "imagePath": "#", "details": "en escalope", "quantity": "200", "unit": "mL"},
-        { "id": 1, "name": "Oeuf", "category": "viande", "imagePath": "#", "details": "Prendre le blanc", "quantity": "4", "unit": "piece" },
-        { "id": 2, "name": "Sucre", "category": "condiment", "imagePath": "#", "details": "en poudre", "quantity": "110", "unit": "gramme" },
-        { "id": 3, "name": "Lait", "category": "laitage", "imagePath": "#", "details": "par personne", "quantity": "600", "unit": "mL" },
-        { "id": 4, "name": "Sel", "category": "condiment", "imagePath": "#", "details": "une pincée", "quantity": "1", "unit": "piece" }
+        { "id": 0, "name": "Crème anglaise", "category": "sauce", "imagePath": "#", "details": "en escalope", "quantity": 200, "unit": "mL"},
+        { "id": 1, "name": "Oeuf", "category": "viande", "imagePath": "#", "details": "Prendre le blanc", "quantity": 4, "unit": "piece" },
+        { "id": 2, "name": "Sucre", "category": "condiment", "imagePath": "#", "details": "en poudre", "quantity": 110, "unit": "g" },
+        { "id": 3, "name": "Lait", "category": "laitage", "imagePath": "#", "details": "Par personne", "quantity": 600, "unit": "mL" },
+        { "id": 4, "name": "Sel", "category": "condiment", "imagePath": "#", "details": "une pincée", "quantity": 1, "unit": "piece" }
     ]},
-    { "id": 5, "name": "Pâtes à la carbonara", "imagePath": "#", "category": "plat", "details": "par personne", "ingredients": [
-        { "id": 0, "name": "Pâte", "category": "féculent", "imagePath": "#", "details": "fusili", "quantity": "100", "unit": "gramme"},
-        { "id": 1, "name": "Oeuf", "category": "viande", "imagePath": "#", "details": "Prendre le jaune", "quantity": "2", "unit": "piece" },
-        { "id": 2, "name": "Crême fraîche", "category": "laitage", "imagePath": "#", "details": "Légère", "quantity": "50", "unit": "mL" },
-        { "id": 3, "name": "Jambon", "category": "viande", "imagePath": "#", "details": "tranches", "quantity": "3", "unit": "pièce" },
-        { "id": 4, "name": "Oignon", "category": "légume", "imagePath": "#", "details": "", "quantity": "1", "unit": "piece" }
+    { "id": 5, "name": "Pâtes à la carbonara", "imagePath": "#", "category": "plat", "details": "Par personne", "ingredients": [
+        { "id": 0, "name": "Pâte", "category": "féculent", "imagePath": "#", "details": "fusili", "quantity": 100, "unit": "g"},
+        { "id": 1, "name": "Oeuf", "category": "viande", "imagePath": "#", "details": "Prendre le jaune", "quantity": 2, "unit": "piece" },
+        { "id": 2, "name": "Crême fraîche", "category": "laitage", "imagePath": "#", "details": "Légère", "quantity": 50, "unit": "mL" },
+        { "id": 3, "name": "Jambon", "category": "viande", "imagePath": "#", "details": "tranches", "quantity": 3, "unit": "pièce" },
+        { "id": 4, "name": "Oignon", "category": "légume", "imagePath": "#", "details": "", "quantity": 1, "unit": "piece" }
     ]},
     { "id": 6, "name": "Oeufs mimosas au thon", "imagePath": "#", "category": "entrée", "details": "pour 2 personnes", "ingredients": [
-        { "id": 0, "name": "Oeuf", "category": "viande", "imagePath": "#", "details": "coupés en deux", "quantity": "4", "unit": "piece"},
-        { "id": 1, "name": "Mayonnaise", "category": "condiment", "imagePath": "#", "details": "maison", "quantity": "20", "unit": "gramme" },
-        { "id": 2, "name": "Thon", "category": "poisson", "imagePath": "#", "details": "", "quantity": "50", "unit": "gramme" }
+        { "id": 0, "name": "Oeuf", "category": "viande", "imagePath": "#", "details": "coupés en deux", "quantity": 4, "unit": "piece"},
+        { "id": 1, "name": "Mayonnaise", "category": "condiment", "imagePath": "#", "details": "maison", "quantity": 20, "unit": "g" },
+        { "id": 2, "name": "Thon", "category": "poisson", "imagePath": "#", "details": "", "quantity": 50, "unit": "g" }
     ]},
     { "id": 7, "name": "Carottes râpées", "imagePath": "#", "category": "entrée", "details": "pour 2 personnes", "ingredients": [
-        { "id": 0, "name": "Carrote", "category": "viande", "imagePath": "#", "details": "râpées", "quantity": "4", "unit": "piece"},
-        { "id": 1, "name": "Echalote", "category": "légume", "imagePath": "#", "details": "", "quantity": "0,5", "unit": "piece" },
-        { "id": 2, "name": "Citron", "category": "fruit", "imagePath": "#", "details": "jus", "quantity": "1", "unit": "piece" },
-        { "id": 3, "name": "Sel", "category": "fruit", "imagePath": "#", "details": "pincée", "quantity": "1", "unit": "piece" },
-        { "id": 4, "name": "Huile d'olive", "category": "huile", "imagePath": "#", "details": "", "quantity": "3", "unit": "cuillère à soupe" },
-        { "id": 5, "name": "Maïs", "category": "légume", "imagePath": "#", "details": "", "quantity": "50", "unit": "gramme" }
+        { "id": 0, "name": "Carrote", "category": "viande", "imagePath": "#", "details": "râpées", "quantity": 4, "unit": "piece"},
+        { "id": 1, "name": "Echalote", "category": "légume", "imagePath": "#", "details": "", "quantity": 0.5, "unit": "piece" },
+        { "id": 2, "name": "Citron", "category": "fruit", "imagePath": "#", "details": "jus", "quantity": 1, "unit": "piece" },
+        { "id": 3, "name": "Sel", "category": "fruit", "imagePath": "#", "details": "pincée", "quantity": 1, "unit": "piece" },
+        { "id": 4, "name": "Huile d'olive", "category": "huile", "imagePath": "#", "details": "", "quantity": 3, "unit": "cuillère à soupe" },
+        { "id": 5, "name": "Maïs", "category": "légume", "imagePath": "#", "details": "", "quantity": 50, "unit": "g" }
     ]}
 ];
 

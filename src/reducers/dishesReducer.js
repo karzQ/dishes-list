@@ -12,8 +12,8 @@ const dishesReducer = (state = initialState, action) => {
     const {type, payload} = action;
     switch(type) {
         case ADD_DISH: {
-            const obj = { id: `${payload.id}-${state.clipboard.length}`, ...payload }
-            return [{...obj, ...state}];        
+            const obj = { id: state.dishes.length, ...payload };
+            return {...state, dishes: [ {...obj} , ...state.dishes] };
         }
 
         case REMOVE_DISH: {

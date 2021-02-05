@@ -1,36 +1,41 @@
-import React, {useState, useEffect, useLayoutEffect} from 'react';
-import { SafeAreaView, StyleSheet, Pressable, View, Text, FlatList, Image, TouchableWithoutFeedback, TouchableHighlight, Modal } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import React, {useState} from 'react';
+import { SafeAreaView, View, Text, FlatList, Image, TouchableHighlight } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import { useDispatch, useSelector } from 'react-redux';
-
-import {theme, width, height} from '../config/theme';
+import * as theme from '../config/theme';
 
 const HomeScreen = ({ navigation }) => {
 
-    const [selectedDish, setSelectedDish] = useState({});
-
-    // const dispatch = useDispatch();
     const dishes = useSelector(store => store.dishesStore.dishes);
 
     const HeaderComponent = () => {
         return (
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
-                <Text style={{ fontSize: 24, padding: 20, paddingLeft: 0, paddingBottom: 35}}>Suggestions</Text>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', padding: 20}}>
+                <Text style={theme.styles.title1}>Suggestions</Text>
             </View>
         )
     }
 
+    const handlePress = (item) => {
+        navigation.navigate('Details', { selectedDish: item})
+    }
+
     const DishItem = ({dish}) => {
+
+        dish.imagePath = 'https://via.placeholder.com/728x90.png';
+
         return (
-            <View>
+            <View style={{position: 'relative', height: 50}}>
                 <TouchableHighlight
-                    activeOpacity={0.8}
+                	style={{position: 'relative', paddingLeft: 20, height: '100%', flexDirection: 'column', justifyContent: 'center'}}
+                    activeOpacity={0.6}
                     underlayColor="#CCCCCC"
-                    onPress={() => navigation.navigate('Modale', { selectedDish: selectedDish})}>
-                    
-                    <View>
-                        <View>
+                    onPress={() => handlePress(dish)}>
+
+                    <View style={{position: 'relative', alignItems: 'start', flexDirection: 'row', height: '100%'}}>
+                        <View style={{height: '100%', width: 'auto', backgroundColor: "lightgrey"}} />
+                        
+                        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}}>
                             <Text >{dish.name}</Text>
                             <Text style={{color:'darkgray'}}>{dish.details}</Text>
                         </View>
@@ -41,18 +46,16 @@ const HomeScreen = ({ navigation }) => {
     }
 
     return (
-        <View style={{height: '100%', position: 'relative'}}>
-            
-
-            <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{flex: 1}}>
+            <View style={{height: '100%', position: 'relative'}}>
                 <FlatList
                     data={dishes}
                     keyExtractor={item => `dish-${item.id}`}
                     renderItem={({item}) => <DishItem dish={item} />}
                     ListHeaderComponent={<HeaderComponent />}>
                 </FlatList>
-            </SafeAreaView>
-        </View>
+            </View>
+        </SafeAreaView>
     )
 }
 export default HomeScreen;

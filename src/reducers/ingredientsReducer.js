@@ -1,5 +1,5 @@
 import { ingredients } from '../config/data';
-import { GET_INGREDIENTS, ADD_INGREDIENTS, REMOVE_INGREDIENTS } from '../redux/actions';
+import { GET_INGREDIENTS, ADD_INGREDIENT, REMOVE_INGREDIENT } from '../redux/actions';
 
 const initialState = {
     ingredients: [...ingredients]
@@ -8,13 +8,17 @@ const initialState = {
 const ingredientsReducer = (state = initialState, action) => {
     const {type, payload} = action;
     switch(type) {
-        case "add_ingredient": {
-            const obj = { id: `${payload.id}-${state.clipboard.length}`, ...payload }
-            return [{...obj, ...state}];        
+        case ADD_INGREDIENT: {
+            const obj = { id: state.ingredients.length, ...payload };
+            return {...state, ingredients: [ {...obj} , ...state.ingredients] };
         }
 
-        case "remove_ingredient": {
+        case REMOVE_INGREDIENT: {
             return state.filter(item => item.id !== payload);
+        }
+
+        case GET_INGREDIENTS: {
+            return state.ingredients;
         }
 
         default: {
